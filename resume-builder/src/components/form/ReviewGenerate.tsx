@@ -20,10 +20,19 @@ export const ReviewGenerate: React.FC = () => {
   const sections = [
     { name: 'Personal Details', filled: !!data.personalDetails.fullName && !!data.personalDetails.email },
     { name: 'Summary', filled: !!data.summary },
-    { name: 'Education', filled: data.education.length > 0 },
-    { name: 'Experience', filled: data.experience.length > 0 },
+    { 
+      name: 'Education', 
+      filled: data.education.length > 0 && data.education.every(edu => edu.institution && edu.degree) 
+    },
+    { 
+      name: 'Experience', 
+      filled: data.experience.length > 0 && data.experience.every(exp => exp.company && exp.role) 
+    },
     { name: 'Skills', filled: data.skills.length > 0 },
-    { name: 'Projects', filled: data.projects.length > 0 },
+    { 
+      name: 'Projects', 
+      filled: data.projects.length > 0 && data.projects.every(p => p.name && p.description) 
+    },
     { name: 'Certifications', filled: data.certifications.length > 0 },
     { name: 'Achievements', filled: data.achievements.length > 0 },
     { name: 'Social Links', filled: Object.values(data.socialLinks).some(v => v) },
