@@ -62,7 +62,7 @@ A production-ready web application that enables users to create professional res
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/methaniya411/Create-AI-Resume-Portfolio.git
 cd resume-builder
 
 # Install dependencies
