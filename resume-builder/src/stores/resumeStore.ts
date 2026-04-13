@@ -44,7 +44,17 @@ export const useResumeStore = create<ResumeStore>()(
       selectedTemplate: 'modern',
       isDarkMode: false,
 
-      setData: (newData) => set((state) => ({ data: { ...state.data, ...newData } })),
+      setData: (newData) => set((state) => {
+        const mergedData = { ...state.data };
+        for (const key in newData) {
+          if (typeof newData[key] === 'object' && newData[key] !== null && !Array.isArray(newData[key])) {
+            mergedData[key] = { ...state.data[key], ...newData[key] };
+          } else {
+            mergedData[key] = newData[key];
+          }
+        }
+        return { data: mergedData };
+      }),
 
       setPersonalDetails: (details) =>
         set((state) => ({

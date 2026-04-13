@@ -104,9 +104,14 @@ const styles = StyleSheet.create({
 
 const formatDate = (date: string) => {
   if (!date) return '';
-  const [year, month] = date.split('-');
+  const parts = date.split('-');
+  if (parts.length !== 2) return date;
+  
+  const [year, month] = parts;
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${months[parseInt(month) - 1]} ${year}`;
+  const monthIndex = parseInt(month) - 1;
+  
+  return months[monthIndex] ? `${months[monthIndex]} ${year}` : date;
 };
 
 export const ResumePDF: React.FC<{ data: ResumeData; template: TemplateType }> = ({ data, template }) => {
@@ -170,7 +175,7 @@ export const ResumePDF: React.FC<{ data: ResumeData; template: TemplateType }> =
                       <Text style={styles.entrySubtitle}>{exp.company}</Text>
                     </View>
                     <Text style={styles.entryDate}>
-                      {formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}
+                      {[formatDate(exp.startDate), exp.current ? 'Present' : formatDate(exp.endDate)].filter(Boolean).join(' - ')}
                     </Text>
                   </View>
                   {exp.description && <Text style={styles.entryDesc}>{exp.description}</Text>}
@@ -191,7 +196,7 @@ export const ResumePDF: React.FC<{ data: ResumeData; template: TemplateType }> =
                       <Text style={styles.entryTitle}>{edu.degree}{edu.field && ` in ${edu.field}`}</Text>
                       <Text style={styles.entrySubtitle}>{edu.institution}</Text>
                     </View>
-                    <Text style={styles.entryDate}>{formatDate(edu.startDate)} - {formatDate(edu.endDate)}</Text>
+                    <Text style={styles.entryDate}>{[formatDate(edu.startDate), formatDate(edu.endDate)].filter(Boolean).join(' - ')}</Text>
                   </View>
                   {edu.gpa && <Text style={{ fontSize: 9, color: '#8888a0' }}>GPA: {edu.gpa}</Text>}
                 </View>
