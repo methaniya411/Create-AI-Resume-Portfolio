@@ -1,0 +1,197 @@
+.template {
+  padding: 2rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  color: #1a1a2e;
+  background: #fafafa;
+}
+
+.header {
+  background: #1a1a2e;
+  color: #e5e5ea;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.codeBlock {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.keyword {
+  color: #c084fc;
+}
+
+.variable {
+  color: #818cf8;
+}
+
+.headerInfo {
+  padding-left: 1.5rem;
+}
+
+.infoLine {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.key {
+  color: #818cf8;
+}
+
+.string {
+  color: #34d399;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 0.75rem;
+}
+
+.comment {
+  color: #6b7280;
+  font-size: 0.8125rem;
+}
+
+.summary {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #4a4a68;
+  padding-left: 0;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #1a1a2e;
+  border-radius: var(--radius-md);
+}
+
+.skillCategory {
+  font-size: 0.875rem;
+}
+
+.skillType {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+.skillList {
+  color: #e5e5ea;
+}
+
+.experience {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid #e5e5ea;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: #8888a0;
+}
+
+.company {
+  font-size: 0.875rem;
+  color: #8b5cf6;
+  margin-bottom: 0.5rem;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.bullets li {
+  font-size: 0.8125rem;
+  color: #4a4a68;
+  margin-bottom: 0.25rem;
+  padding-left: 1rem;
+}
+
+.bulletArrow {
+  color: #6366f1;
+}
+
+.project {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid #e5e5ea;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.projectName {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.projectLink {
+  font-size: 0.75rem;
+  color: #6366f1;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  margin: 0.5rem 0;
+}
+
+.techStack {
+  font-size: 0.8125rem;
+  color: #8888a0;
+  margin-top: 0.5rem;
+}
+
+.techLabel {
+  color: #c084fc;
+}
+
+.education {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+  border: 1px solid #e5e5ea;
+}
+
+.degree {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.eduDetails {
+  font-size: 0.8125rem;
+  color: #8888a0;
+}

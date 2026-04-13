@@ -1,0 +1,250 @@
+.template {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  font-family: 'Source Serif 4', 'Georgia', serif;
+  color: #1a1a2e;
+  min-height: 100%;
+}
+
+.header {
+  background: #f5f5f5;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid #e5e5ea;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  color: #4a4a68;
+  margin-bottom: 1rem;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social span {
+  font-size: 0.75rem;
+  color: #6366f1;
+  padding: 0.125rem 0.5rem;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 4px;
+}
+
+.main {
+  padding: 2rem 1.5rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1a1a2e;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e5e5ea;
+}
+
+.summary {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4a4a68;
+}
+
+.education {
+  margin-bottom: 1rem;
+}
+
+.eduMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.degree {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.institution {
+  font-size: 0.9375rem;
+  color: #6366f1;
+}
+
+.eduDetails {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: #8888a0;
+  margin: 0.25rem 0;
+}
+
+.gpa {
+  color: #4a4a68;
+}
+
+.eduDesc {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  font-style: italic;
+}
+
+.experience {
+  margin-bottom: 1.25rem;
+}
+
+.expMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.company {
+  font-size: 0.9375rem;
+  color: #6366f1;
+}
+
+.expDetails {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: #8888a0;
+  margin: 0.25rem 0;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  margin: 0.5rem 0;
+}
+
+.bullets {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.bullets li {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  margin-bottom: 0.25rem;
+}
+
+.project {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #fafafa;
+  border-radius: var(--radius-sm);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.projectName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.projectLink {
+  font-size: 0.75rem;
+  color: #6366f1;
+}
+
+.techStack {
+  font-size: 0.8125rem;
+  color: #8888a0;
+  margin-top: 0.5rem;
+}
+
+.techLabel {
+  font-weight: 600;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillCategory {
+  font-size: 0.875rem;
+}
+
+.skillType {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.skillNames {
+  color: #4a4a68;
+}
+
+.certification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.certName {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.certDetails {
+  font-size: 0.8125rem;
+  color: #8888a0;
+}
+
+.achievement {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  background: #fafafa;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #6366f1;
+}
+
+.achTitle {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.achDate {
+  font-size: 0.8125rem;
+  color: #8888a0;
+  margin-left: 0.5rem;
+}
+
+.achDesc {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  margin-top: 0.25rem;
+}

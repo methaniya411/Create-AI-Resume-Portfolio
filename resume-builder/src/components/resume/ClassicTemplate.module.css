@@ -1,0 +1,174 @@
+.template {
+  padding: 2.5rem 2rem;
+  font-family: 'Times New Roman', serif;
+  color: #1a1a2e;
+  line-height: 1.5;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #1a1a2e;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: #4a4a68;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.8125rem;
+  color: #4a4a68;
+  margin-top: 0.5rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.summary {
+  font-size: 0.9375rem;
+  color: #4a4a68;
+}
+
+.experience {
+  margin-bottom: 1.25rem;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.date {
+  font-size: 0.8125rem;
+  color: #8888a0;
+}
+
+.company {
+  font-size: 0.9375rem;
+  color: #6366f1;
+  font-style: italic;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  margin: 0.5rem 0;
+}
+
+.bullets {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.bullets li {
+  font-size: 0.875rem;
+  color: #4a4a68;
+  margin-bottom: 0.25rem;
+}
+
+.education {
+  margin-bottom: 1rem;
+}
+
+.eduHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.degree {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.institution {
+  font-size: 0.9375rem;
+  color: #6366f1;
+}
+
+.gpa {
+  font-size: 0.8125rem;
+  color: #8888a0;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill {
+  font-size: 0.875rem;
+  color: #1a1a2e;
+}
+
+.skill:not(:last-child)::after {
+  content: ',';
+}
+
+.project {
+  margin-bottom: 0.75rem;
+}
+
+.projectName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.tech {
+  font-size: 0.8125rem;
+  color: #8888a0;
+  margin-top: 0.25rem;
+}
+
+.certification {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+.certName {
+  font-weight: 600;
+}
+
+.certIssuer {
+  font-size: 0.875rem;
+  color: #8888a0;
+}
