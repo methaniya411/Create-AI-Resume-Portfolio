@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useResumeStore } from '../stores/resumeStore';
 import { PersonalDetails } from '../components/form/PersonalDetails';
@@ -28,6 +29,7 @@ const steps = [
 
 export const FormWizard: React.FC = () => {
   const { currentStep, setCurrentStep } = useResumeStore();
+  const navigate = useNavigate();
   const CurrentComponent = steps[currentStep].component;
 
   const handleNext = () => {
@@ -99,7 +101,7 @@ export const FormWizard: React.FC = () => {
             Continue
           </button>
         ) : (
-          <button className={styles.navButtonPrimary} onClick={handleNext}>
+          <button className={styles.navButtonPrimary} onClick={() => navigate('/preview')}>
             Generate Resume
           </button>
         )}
