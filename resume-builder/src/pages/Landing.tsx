@@ -56,17 +56,17 @@ export const Landing: React.FC = () => {
         >
           <span className={styles.badge}>
             <Sparkles size={14} />
-            AI-Powered Resume Builder
+            CareerCanvas
           </span>
           
           <h1 className={styles.heroTitle}>
-            Build Professional Resumes
-            <span className={styles.highlight}> in Minutes</span>
+            Paint Your Career Story
+            <span className={styles.highlight}> in Colors</span>
           </h1>
           
           <p className={styles.heroDescription}>
-            Create stunning resumes and personal portfolio websites through a guided, 
-            form-based workflow. No design skills required.
+            Create stunning portfolios and resumes that tell your unique professional story. 
+            No design skills required.
           </p>
           
           <div className={styles.heroCta}>

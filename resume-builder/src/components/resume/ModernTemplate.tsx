@@ -39,11 +39,36 @@ export const ModernTemplate: React.FC<TemplateProps> = ({ data }) => {
         {skills.length > 0 && (
           <div className={styles.section}>
             <h3 className={styles.sectionTitle}>Skills</h3>
-            <div className={styles.skills}>
-              {skills.map(skill => (
-                <span key={skill.id} className={styles.skill}>{skill.name}</span>
-              ))}
-            </div>
+            {skills.filter(s => s.category === 'technical').length > 0 && (
+              <div className={styles.skillCategory}>
+                <span className={styles.categoryLabel} style={{ color: '#6366f1' }}>Technical</span>
+                <div className={styles.skills}>
+                  {skills.filter(s => s.category === 'technical').map(skill => (
+                    <span key={skill.id} className={styles.skill}>{skill.name}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {skills.filter(s => s.category === 'soft').length > 0 && (
+              <div className={styles.skillCategory}>
+                <span className={styles.categoryLabel} style={{ color: '#8b5cf6' }}>Soft Skills</span>
+                <div className={styles.skills}>
+                  {skills.filter(s => s.category === 'soft').map(skill => (
+                    <span key={skill.id} className={styles.skillSoft}>{skill.name}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {skills.filter(s => s.category === 'language').length > 0 && (
+              <div className={styles.skillCategory}>
+                <span className={styles.categoryLabel} style={{ color: '#10b981' }}>Languages</span>
+                <div className={styles.skills}>
+                  {skills.filter(s => s.category === 'language').map(skill => (
+                    <span key={skill.id} className={styles.skillLang}>{skill.name}</span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -129,6 +154,19 @@ export const ModernTemplate: React.FC<TemplateProps> = ({ data }) => {
               <div key={cert.id} className={styles.certification}>
                 <span className={styles.certName}>{cert.name}</span>
                 <span className={styles.certIssuer}>{cert.issuer}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {data.achievements.length > 0 && (
+          <div className={styles.section}>
+            <h2 className={styles.sectionHeading}>Achievements</h2>
+            {data.achievements.map(ach => (
+              <div key={ach.id} className={styles.certification}>
+                <span className={styles.certName}>{ach.title}</span>
+                <span className={styles.certIssuer}>{ach.date}</span>
+                {ach.description && <p className={styles.description}>{ach.description}</p>}
               </div>
             ))}
           </div>

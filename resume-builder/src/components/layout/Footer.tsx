@@ -7,8 +7,8 @@ export const Footer: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.brand}>
-            <span className={styles.logo}>ResumeForge</span>
-            <p className={styles.tagline}>Build professional resumes in minutes</p>
+            <span className={styles.logo}>CareerCanvas</span>
+            <p className={styles.tagline}>Paint your career story</p>
           </div>
           <div className={styles.links}>
             <a href="#" className={styles.link}>Privacy</a>
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         <div className={styles.copyright}>
-          &copy; {new Date().getFullYear()} ResumeForge AI. All rights reserved.
+          &copy; {new Date().getFullYear()} CareerCanvas. All rights reserved.
         </div>
       </div>
     </footer>

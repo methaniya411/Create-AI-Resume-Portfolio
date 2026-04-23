@@ -82,11 +82,36 @@ export const ClassicTemplate: React.FC<TemplateProps> = ({ data }) => {
       {skills.length > 0 && (
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>SKILLS</h2>
-          <div className={styles.skills}>
-            {skills.map(skill => (
-              <span key={skill.id} className={styles.skill}>{skill.name}</span>
-            ))}
-          </div>
+          {skills.filter(s => s.category === 'technical').length > 0 && (
+            <div className={styles.skillCategory}>
+              <span className={styles.categoryLabel}>Technical:</span>
+              <div className={styles.skills}>
+                {skills.filter(s => s.category === 'technical').map(skill => (
+                  <span key={skill.id} className={styles.skill}>{skill.name}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {skills.filter(s => s.category === 'soft').length > 0 && (
+            <div className={styles.skillCategory}>
+              <span className={styles.categoryLabel}>Soft Skills:</span>
+              <div className={styles.skills}>
+                {skills.filter(s => s.category === 'soft').map(skill => (
+                  <span key={skill.id} className={styles.skill}>{skill.name}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {skills.filter(s => s.category === 'language').length > 0 && (
+            <div className={styles.skillCategory}>
+              <span className={styles.categoryLabel}>Languages:</span>
+              <div className={styles.skills}>
+                {skills.filter(s => s.category === 'language').map(skill => (
+                  <span key={skill.id} className={styles.skill}>{skill.name}</span>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -112,6 +137,19 @@ export const ClassicTemplate: React.FC<TemplateProps> = ({ data }) => {
             <div key={cert.id} className={styles.certification}>
               <span className={styles.certName}>{cert.name}</span>
               <span className={styles.certIssuer}>{cert.issuer} - {formatDate(cert.date)}</span>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {data.achievements.length > 0 && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>ACHIEVEMENTS</h2>
+          {data.achievements.map(ach => (
+            <div key={ach.id} className={styles.certification}>
+              <span className={styles.certName}>{ach.title}</span>
+              <span className={styles.certIssuer}>{formatDate(ach.date)}</span>
+              {ach.description && <p className={styles.description}>{ach.description}</p>}
             </div>
           ))}
         </section>

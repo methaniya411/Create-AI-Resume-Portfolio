@@ -3,11 +3,18 @@ import { persist } from 'zustand/middleware';
 import type { ResumeData, TemplateType } from '../data/types';
 import { initialResumeData } from '../data/types';
 
+interface PortfolioSettings {
+  theme: 'dark' | 'light' | 'midnight' | 'ocean';
+  primaryColor: string;
+  animationStyle: 'fade' | 'slide' | 'none';
+}
+
 interface ResumeStore {
   data: ResumeData;
   currentStep: number;
   selectedTemplate: TemplateType;
   isDarkMode: boolean;
+  portfolioSettings: PortfolioSettings;
   setData: (data: Partial<ResumeData>) => void;
   setPersonalDetails: (details: Partial<ResumeData['personalDetails']>) => void;
   setSummary: (summary: string) => void;
@@ -33,6 +40,7 @@ interface ResumeStore {
   setCurrentStep: (step: number) => void;
   setSelectedTemplate: (template: TemplateType) => void;
   toggleDarkMode: () => void;
+  setPortfolioSettings: (settings: Partial<PortfolioSettings>) => void;
   resetData: () => void;
 }
 
@@ -43,18 +51,15 @@ export const useResumeStore = create<ResumeStore>()(
       currentStep: 0,
       selectedTemplate: 'modern',
       isDarkMode: false,
+      portfolioSettings: {
+        theme: 'dark',
+        primaryColor: '#6366f1',
+        animationStyle: 'fade',
+      },
 
-      setData: (newData) => set((state) => {
-        const mergedData = { ...state.data };
-        for (const key in newData) {
-          if (typeof newData[key] === 'object' && newData[key] !== null && !Array.isArray(newData[key])) {
-            mergedData[key] = { ...state.data[key], ...newData[key] };
-          } else {
-            mergedData[key] = newData[key];
-          }
-        }
-        return { data: mergedData };
-      }),
+      setData: (newData) => set((state) => ({
+        data: { ...state.data, ...newData }
+      })),
 
       setPersonalDetails: (details) =>
         set((state) => ({
@@ -149,7 +154,7 @@ export const useResumeStore = create<ResumeStore>()(
         set((state) => ({
           data: {
             ...state.data,
-            skills: [...state.data.skills, { ...skill, id: crypto.randomUUID() }],
+            skills: [...state.data.skills, { ...skill, id: skill.id || crypto.randomUUID() }],
           },
         })),
 
@@ -279,6 +284,11 @@ export const useResumeStore = create<ResumeStore>()(
       setSelectedTemplate: (template) => set({ selectedTemplate: template }),
 
       toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
+
+      setPortfolioSettings: (settings) =>
+        set((state) => ({
+          portfolioSettings: { ...state.portfolioSettings, ...settings },
+        })),
 
       resetData: () => set({ data: initialResumeData, currentStep: 0 }),
     }),

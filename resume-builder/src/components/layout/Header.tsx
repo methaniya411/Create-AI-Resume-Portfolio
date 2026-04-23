@@ -20,8 +20,8 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          <span className={styles.logoIcon}>RF</span>
-          <span className={styles.logoText}>ResumeForge</span>
+          <span className={styles.logoIcon}>CC</span>
+          <span className={styles.logoText}>CareerCanvas</span>
         </Link>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>

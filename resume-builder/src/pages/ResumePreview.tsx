@@ -31,15 +31,26 @@ export const ResumePreview: React.FC = () => {
   const navigate = useNavigate();
   const { data, selectedTemplate, setSelectedTemplate } = useResumeStore();
   const [showAISuggestions, setShowAISuggestions] = React.useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = React.useState(false);
 
   const handleDownloadPDF = async () => {
-    const blob = await pdf(<ResumePDF data={data} template={selectedTemplate} />).toBlob();
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `${data.personalDetails.fullName || 'resume'}.pdf`;
-    link.click();
-    URL.revokeObjectURL(url);
+    try {
+      setIsGeneratingPDF(true);
+      const pdfDoc = <ResumePDF data={data} template={selectedTemplate} />;
+      const blob = await pdf(pdfDoc).toBlob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${data.personalDetails.fullName || 'resume'}.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch (error: any) {
+      console.error('PDF download error:', error);
+      const errorMessage = error?.message || error?.toString() || 'Unknown error';
+      alert(`Error generating PDF: ${errorMessage}\n\nPlease try again or use a different template.`);
+    } finally {
+      setIsGeneratingPDF(false);
+    }
   };
 
   const renderTemplate = () => {
@@ -80,9 +91,9 @@ export const ResumePreview: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.section}>
-          <Button onClick={handleDownloadPDF} icon={<Download size={18} />} size="lg">
-            Download PDF
+<div className={styles.section}>
+          <Button onClick={handleDownloadPDF} icon={<Download size={18} />} size="lg" disabled={isGeneratingPDF}>
+            {isGeneratingPDF ? 'Generating...' : 'Download PDF'}
           </Button>
         </div>
 

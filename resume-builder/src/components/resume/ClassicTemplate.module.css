@@ -141,6 +141,16 @@
   content: ',';
 }
 
+.skillCategory {
+  margin-bottom: 0.5rem;
+}
+
+.categoryLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
 .project {
   margin-bottom: 0.75rem;
 }

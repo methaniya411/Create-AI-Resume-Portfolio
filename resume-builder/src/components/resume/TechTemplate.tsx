@@ -144,6 +144,44 @@ export const TechTemplate: React.FC<TemplateProps> = ({ data }) => {
           ))}
         </section>
       )}
+
+      {data.certifications.length > 0 && (
+        <section className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.comment}>// Certifications</span>
+          </div>
+          {data.certifications.map(cert => (
+            <div key={cert.id} className={styles.experience}>
+              <div className={styles.expHeader}>
+                <span className={styles.role}>{cert.name}</span>
+                <span className={styles.date}>
+                  [{formatDate(cert.date)}]
+                </span>
+              </div>
+              <div className={styles.company}>{cert.issuer}</div>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {data.achievements.length > 0 && (
+        <section className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.comment}>// Achievements</span>
+          </div>
+          {data.achievements.map(ach => (
+            <div key={ach.id} className={styles.experience}>
+              <div className={styles.expHeader}>
+                <span className={styles.role}>{ach.title}</span>
+                <span className={styles.date}>
+                  [{formatDate(ach.date)}]
+                </span>
+              </div>
+              {ach.description && <p className={styles.description}>{ach.description}</p>}
+            </div>
+          ))}
+        </section>
+      )}
     </div>
   );
 };
